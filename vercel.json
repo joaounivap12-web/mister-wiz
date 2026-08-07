@@ -1,5 +1,4 @@
 {
-  "installCommand": "npm install",
-  "buildCommand": "npx vite build",
-  "outputDirectory": ".output/public"
+  "buildCommand": "bun run build",
+  "outputDirectory": "dist"
 }
