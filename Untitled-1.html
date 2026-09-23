@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>adicionar numero na lista</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .campo {
+      margin-bottom: 10px;
+    }
+    select {
+      width: 150px;
+      height: 120px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>adicionar numero na lista</h2>
+
+  <div class="campo">
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" placeholder="Ex: 42">
+    <button onclick="adicionarNumero()">Adicionar</button>
+  </div>
+
+  <div class="campo">
+    <label for="lista">lista de numeros:</label><br>
+    <select id="lista" size="6">
+    </select>
+  </div>
+
+  <script>
+    function adicionarNumero() {
+      const inputNumero = document.getElementById("numero");
+      const lista = document.getElementById("lista");
+      const valor = inputNumero.value;
+
+      if (valor.trim() === "") {
+        alert("Por favor, digite um número antes de adicionar.");
+        return;
+      }
+      const novaOpcao = document.createElement("option");
+      novaOpcao.text = valor;
+      novaOpcao.value = valor;
+
+      lista.appendChild(novaOpcao);
+
+      inputNumero.value = "";
+      inputNumero.focus();
+    }
+  </script>
+
+</body>
+</html>
